@@ -9,3 +9,7 @@ UiTestAPP/.clangd
 UiTestAPP/.clang-format
 UiTestAPP/.clang-tidy
 UiTestAPP**/.test
+*.idea
+*.pyc
+build/
+HMDriverClient.egg-info

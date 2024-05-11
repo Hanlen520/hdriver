@@ -4,7 +4,7 @@ import socket from '@ohos.net.socket';
 import { BusinessError } from '@ohos.base';
 import request from '@ohos.request';
 
-import { action, myPrint, sleep } from './UiTestProcess';
+import { action, myPrint, sleep, pressHome } from './UiTestProcess';
 
 class SocketInfo {
   message: ArrayBuffer = new ArrayBuffer(1);
@@ -61,7 +61,7 @@ function startSocketServer(port: number){
   }).catch((err: BusinessError) => {
     myPrint('setExtraOptions fail');
   });
-  
+
   // 订阅TCPSocketServer的connect事件
   tcpServer.on("connect", (client: socket.TCPSocketConnection) => {
     myPrint(`on connect: ${client.clientId}`);
@@ -98,7 +98,7 @@ function startSocketServer(port: number){
         myPrint(`action resp: ${JSON.stringify(sendData)}`);
         let retMap:Map<string,string> = new Map<string,string>();
         for (let rr of sendData){
-          retMap[rr.name] = rr.value
+           retMap[rr.name] = rr.value
         }
         socketSend(client, JSON.stringify(retMap));
       });
@@ -107,15 +107,15 @@ function startSocketServer(port: number){
 
     // 向客户端发送数据
     // socketSend(client, "Hello, client!")
-    
+
   });
-  
+
 }
 
 async function uiTestProcess(serverPort:number) {
   try {
     startSocketServer(serverPort);
-
+    await pressHome()
     await sleep(86400*1000);
   }catch(aa){
     myPrint("test err: " + JSON.stringify(aa))
