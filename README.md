@@ -5,7 +5,7 @@
 - HMDriver包括两部分UiTestAPP和HMDriverClient
 - UiTestAPP基于鸿蒙系统提供的“@ohos.UiTest”模块,使用ArkTS语言开发的测试APP。其在鸿蒙端启动一个SocketServer，接收HMDriverClient的指令，执行元素查找、点击、滑动等操作，并返回结果。
 
-![image](https://git.yy.com/autotest/platform/perfyy/HMDriver/-/raw/main/run.png?inline=false)
+![image](https://github.com/mrx1203/hmdriver/blob/main/run.png)
 
 ## 特点
  * 支持鸿蒙手机、Pad等其他设备
@@ -100,4 +100,4 @@ ele2 = ele.scrollSearch("text", "设置")
 
 ## License
 
-HDriver is released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+HMDriver is released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
