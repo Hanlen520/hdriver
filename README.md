@@ -21,12 +21,8 @@
 
 ## 使用说明
 
-
-1. UiTestAPP基于HarmonyOS4.1，按照鸿蒙官方说明安装SDK和DevEco-studio等必要环境后，使用DevEco-studio打开UiTestAPP工程，设置dependencies和SigningConfig后，并且鸿蒙设备连接就绪
-
-2. 编译运行：DevEco-studio中打开UiTestAPP/entry/src/ohosTest/ets/test/Ability.test.ets文件，找到代码行`it('uiTestProcess29100', 0, uiTestProcess29100)`，点击代码行左侧的绿色三角，选择debug即可编译安装
-
-3. HMDriverClient基于Python3，且无需安装额外的第三方包，使用举例如下：
+在创建HMDriver实例的时候，会自动安装UiTestAPP到设备上并启动，然后转发端口并进行连接
+HMDriverClient基于Python3，使用举例如下：
 ```
 from hmdriver import HMDriver
 hdriver = HMDriver("127.0.0.1:5555")
